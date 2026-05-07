@@ -14,7 +14,7 @@ export default function Login() {
         console.log(data);
 
         // 🔐 oddiy tekshiruv (fake login)
-        if (data.email === "admin@gmail.com" && data.password === "123456") {
+        if (data.email === "coddy123@gmail.com" && data.password === "123456") {
             navigate("/home"); // 👉 boshqa page ga o'tkazadi
         } else {
             alert("Login yoki parol noto‘g‘ri");
