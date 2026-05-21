@@ -5,15 +5,18 @@ const Navbar = () => {
   return (
     <div>
       <nav>
-        <ul style={{display:"flex", gap:50}}>
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="about">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="contacts">Contacts</Link>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/user/1">User</Link>
           </li>
         </ul>
       </nav>
