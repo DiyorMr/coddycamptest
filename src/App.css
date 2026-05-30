@@ -1,0 +1,30 @@
+body {
+  background-color: rgb(47, 46, 46);
+  color: red;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: aqua;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: aquamarine;
+  transform: translateY(-3px);
+}
