@@ -1,24 +1,28 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import { Route, Router, Routes } from "react-router-dom";
-import User from "./pages/User";
-import NotFound from "./pages/NotFound";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const App = () => {
+  const [pokemon, setPokemon] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://pokeapi.co/api/v2/pokemon/")
+      .then((res) => setPokemon(res.data.results))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/user/:userId" element={<User />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+    <div>
+      {pokemon.map((item, index) => (
+        <div key={index}>
+          <h1>{item.name}</h1>
+          <img style={{width:200}}
+            src={`https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg`}
+            alt={item.name}
+          />
+        </div>
+      ))}
+    </div>
   );
 };
+
 export default App;
